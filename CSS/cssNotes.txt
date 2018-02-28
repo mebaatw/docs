@@ -1,0 +1,53 @@
+p {display: inline;}
+em {display: block;}
+
+<style type="text/css">
+@import url(styles.css); /* @import comes first */
+@import url(sheet2.css) all;
+@import url(blueworld.css) screen;
+@import url(zany.css) projection, print;
+
+h1 {color: gray;}
+</style>
+
+Elements
+	- most common: p, table, span, a, and div
+	- two forms: replaced (img, input) and nonreplaced.
+	- display types: 
+		- block-level: 
+				- generates “breaks” before and after the element box 
+				-  p and div ; List items 
+		- inline-level: These elements do not generate a “break” before or after themselves, so they can appear within the content of another element without 
+		                disrupting its display.
+			- a element; strong and em
+		- in HTML block-level elements cannot descend from inline-level elements
+		- CSS, on the other hand, has no such restrictions. You can leave the markup as it is but change the display roles of the two elements like this:
+			p {display: inline;}
+			em {display: block;}
+			this is not legal in HTML
+		
+Associate CSS with a document:
+				- link tag
+					- <link rel="stylesheet" type="text/css" href="sheet1.css" media="all">
+					- link must be placed inside the head element but may not be placed inside any other element. 
+					- only those link tags with a rel of stylesheet will be used in the initial display of the document
+					- alternate stylesheets
+				- @import declaration 
+					- see above
+					- Imports must be placed at the beginning of the stylesheet that contains them, but they are otherwise unconstrained.
+					- @import can be highly useful if you have an external stylesheet that needs to use the styles found in other external stylesheets. 
+					
+Stylesheet Contents:
+	- Rule Structure:
+		h1 {color: red; background: yellow;}
+		- Each rule has two fundamental parts: the selector (h1) and the declaration block (contained within --> {}). 
+		- The declaration block is composed of one or more declarations ( separated by -> ;), 
+		- Each declaration is a pairing of a property (color, background) and a value (red,yellow).
+	- /* This is a CSS1 comment */	
+		
+Media Queries	
+	- Media queries can be employed in the following places:
+		- The media attribute of a link element
+		- The media attribute of a style element
+		- The media descriptor portion of an @import declaration
+		- The media descriptor portion of an @media declaration	

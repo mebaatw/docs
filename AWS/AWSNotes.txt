@@ -1,0 +1,117 @@
+ AWS Cloud Practitioner Essentials: Cloud Concepts 
+ 
+ Cloud Computing:
+	- on demand delivery of IT resources and applications via the internet with pay as you go pricing.
+	- helps resovle overhead of real estate, power, and cooling.
+	- servers, databases, storage, and higher level application components can be:
+		- initiated within seconds
+		- treated as temporary and disposable resources
+	- more agile and efficient:
+	- Speed
+		- global reach within moments notice: Data centers where customers are
+		- new resources are a click away
+	- Experimentation:
+		- AWS enables operations as code in the cloud
+		- AWS CloudFormation enables templated environments
+	- Culture of innovation
+		
+		
+ AWS Infrastructure Elasticity, Scalability, and Reliability computer sources:
+	- AWS infrastructure is built around
+		- Regions:
+			- physical location in the world
+			- contains multiple Availability Zones
+		- Availability Zones (AZs):
+			- AZs consist of one or more discrete data centers
+			- Each AZ has redundant power/networking/connectivity housed in separate facilities
+			- offer you the ability to operate production applications and databases which are more:
+				- High available:
+					- ensures that your systems are always functioning and accessible
+					- downtime is minimized as much as possible
+					- without the need for human intervention
+				- Fault tolerant:
+					- system can remaine operational even if components of that system fail.
+					- its the built in redundancy of an applications' components
+				- Scalable:
+					- elastic --> can scale computer resources up and down easily while actually paying for the resources being used.
+					- quickly deploy applications
+					- instantly scale up as the workload grows
+					- instantly shutdown resources that are no longer required.
+					- scale down and not pay for the infrastructure
+					- on demand auto scaling and load balancing
+				- Secure
+					- customer retains control and ownership over regions and where data is located
+					- easy to maintian regional compliance and data residency requirements 
+					- AWS provides governance capabilities that provides continuous monitoring of configuration changes of your IT resources
+					- industry leading securites
+					- multi factor access
+					- access authorized on a least privileged basis
+			- then a single data center	
+		- Deploy your system in multiple regions at a time providing lower latency and better experience	
+		
+		
+AWS Core Services
+ - Services and Categories:
+	- https://aws.amazon.com/ --> explore our products 
+		- Documentation found under: more --> documentation https://aws.amazon.com/documentation/
+	- AWS has building blocks for common cloud architectures including
+ - AWS Global infrastructure: 
+	- https://aws.amazon.com/ --> scroll down to --> Global Network of Regions and Edge Locations -> Learn More link
+		--> See detailed list of offerings at all AWS locations (Region Table)
+	- Regions
+		- host 2 or more AZs
+	- Availability Zones (AZ)
+		- Collection of data centers within a region 
+	- Edge Locations
+		- host content delivery network called Amazon CloudFront used to deliver content to your cutomers
+		- request to content are automatiacally routed to the nearest Edge location for faster delivery
+		- Edge locations are located in highly populated areas 
+		- more info @ aws.amazon.com/cloudfront/details
+ - Amazon Virtual Private Cloud (VPC):
+	- pay as you go on demand compute 
+	- managed services
+	- compute and managed services must by accessed via normal IP protocols
+	- adhere to networking best practices and org requirements
+	- Amazon VPC is the networking AWS service that will meet your network requirements
+	- Amazon VPC is a AWS foundational services and integrates with other AWS services
+	- Features:
+		- AWS Regions and AZs
+			- Amazon VPC lives within a Region
+			- multiple VPCs per account
+		- Subnets
+			- A VPC defines an IP address space that is then divided by subnets
+			- These subnets are deployed within AZs causing the VPC to span AZs
+			- You can create many subnets in a VPC, though fewer is limited to limit the complexity of the network topology
+			- Subnets are genrally classified as public or private with public having direct access to the internet and private not having access to the internet
+			- For subnet to be public we need to attache an Internet Gateway (see bellow) to the VPC and update the route table of the public subnet to send
+			  non local traffic to the internet gateway
+			- EC2 instances also need a public IP address to route to an internet gateway
+		- Route Tables
+			- control traffic between subnets and the internet
+			- by default all subnets within a VPC can communicate with each other
+		- Internet Gateway (IGW)
+			- Allows access to the internet from the Amazon VPC
+		- NAT Gateway
+			- Allows private subnet resources to access the internet
+		- Network Access Contril Lists (NACL)
+			- control access to subnets; stateless
+	- Example Amazon VPC that we can use to start deploying compute resources and AWS services --> aws.amazon.com/vpc
+		- A network that uses high availability and multiple subnets:
+		-1) Since VPCs are region based --> select a region
+		-2) Create the VPC:
+			- name: test vpc
+			- Define IP address space for the VPC: 10.0.0.0/16 --> classless inter domain routing format. 
+			  It means you have over 65,000 IP addresses to use in the VPC
+		-3) Create a subnet:
+			- name: subnet A1
+			- IP address: 10.0.0.0/24 --> assign an IP address space that contains 256 IP addresses
+			- Specifiy the AZ the subnet lives in --> Availability Zone A
+		-4) Create another subnet
+			- name: subnet B1
+			- IP address: 10.0.2.0/23 --> contains 512 IP addresses
+			- Specifiy the AZ the subnet lives in --> Availability Zone A
+		-5) Add an Internet Gateway:
+			- name: Test-IGW
+		-6) subnet A1 will become a public subnet well non local traffic is routed through the internet gateway
+		-7) subnet B1 will become a private subnet that is isolated from the internet
+			
