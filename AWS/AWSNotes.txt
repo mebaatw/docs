@@ -114,4 +114,17 @@ AWS Core Services
 			- name: Test-IGW
 		-6) subnet A1 will become a public subnet well non local traffic is routed through the internet gateway
 		-7) subnet B1 will become a private subnet that is isolated from the internet
-			
+ - Amazon Security Groups:
+	- act like a built in firewall for virtual servers
+	- give you full control on how accessible your instances are what traffic to allow or deny
+	- to determine who has access to your instances you would configure a security group rule
+	- security group rules can vary from keeping instances private, public, or somwhere in the middle.
+	- see example 1AmazonSecurityGroupRules.png
+	  - example of aws multy tiered AWS security group
+	  - multiple security group rules have been created to accomodate this multi tier web architecture
+	  - Web tier: accepts internet on port 80/443 by selecting the source of 0-0-0-0
+	  - application tier: only accepts traffic from the web tier
+	  - database tier: only accepts traffic from the app tier 
+	  - there has also been a rule created to allow administration remotely from the Corporate Admin Network over ssh port 22
+	- Creating a security group: see AmazonSecurityGroupRulesCreate.png
+	  - 
