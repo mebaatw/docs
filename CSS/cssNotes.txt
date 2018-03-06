@@ -83,4 +83,18 @@ Selectors
 			- p.warning {font-weight: bold;}
 			- selector matches any p elements that have a class attribute containing the word warning
 			- the warning paragraph is boldfaced
+			- p.warning.help {background: red;} --> p elements with a class containing the words warning and help; both not just one 
+			- You may assign classes to any number of elements,
 	- ID Selectors	
+		- ID selectors are preceded by an octothorpe (#)
+		- refer to values found in id attributes
+		- IDs, on the other hand, should be used once, and only once, within an HTML document
+		- ID selectors can’t be combined with other IDs
+		- IDs carry more weight then class
+	- Attribute Selectors
+		- CSS2 introduced attribute selectors, which can be used to select elements based on their attributes and the values of those attributes.
+		- There are four general types of attribute selectors:
+			- Simple Attribute Selectors
+				- select elements that have a certain attribute, regardless of that attribute’s value
+				- h1[class] {color: silver;} --> select all h1 elements that have a class attribute with any value and make their text silver
+			
