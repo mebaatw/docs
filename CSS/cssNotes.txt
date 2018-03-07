@@ -51,3 +51,50 @@ Media Queries
 		- The media attribute of a style element
 		- The media descriptor portion of an @import declaration
 		- The media descriptor portion of an @media declaration	
+	- types:
+		- all: Use in all presentational media.
+		- print: Use when printing the document for sighted users and also when displaying a print preview of the document.
+		- screen: Use when presenting the document in a screen medium like a desktop computer monitor. 
+
+Selectors
+	- Elements of the document serve as the most basic selectors. 
+		- In XML, a selector could be anything, since XML allows for the creation of new markup languages that can have just about anything as an element name
+		- In an HTML document, on the other hand, the selector will generally be one of the many HTML elements such as p, h3, em, a, or even html itself.
+		- For example:
+			html {color: black;}
+			h1 {color: gray;}
+			h2 {color: silver;}
+	- Grouping
+		- Apply the same style to multiple elements
+		- h2, p {color: gray;}
+		- The comma tells the browser that there are two different selectors involved in the rule. Leaving out the comma would give the rule a different meaning
+	- universal selector
+		- *
+		- wildcard matches any element
+		- for example:  make every single element in a document red --> * {color: red;}
+	- Grouping Declarations
+		- h1 {font: 18px Helvetica; color: purple; background: aqua;}
+	- New Elements in Old Browsers: --> document.createElement('main');	
+	- Class Selectors
+		- class selector reference is always preceded by a period (.)
+		- .warning {font-weight: bold;}
+		- <p class="warning">When handling plutonium, care must be taken to avoidthe formation of a critical mass.</p>
+		- class selector can be combined:
+			- p.warning {font-weight: bold;}
+			- selector matches any p elements that have a class attribute containing the word warning
+			- the warning paragraph is boldfaced
+			- p.warning.help {background: red;} --> p elements with a class containing the words warning and help; both not just one 
+			- You may assign classes to any number of elements,
+	- ID Selectors	
+		- ID selectors are preceded by an octothorpe (#)
+		- refer to values found in id attributes
+		- IDs, on the other hand, should be used once, and only once, within an HTML document
+		- ID selectors can’t be combined with other IDs
+		- IDs carry more weight then class
+	- Attribute Selectors
+		- CSS2 introduced attribute selectors, which can be used to select elements based on their attributes and the values of those attributes.
+		- There are four general types of attribute selectors:
+			- Simple Attribute Selectors
+				- select elements that have a certain attribute, regardless of that attribute’s value
+				- h1[class] {color: silver;} --> select all h1 elements that have a class attribute with any value and make their text silver
+			

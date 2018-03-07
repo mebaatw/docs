@@ -127,4 +127,37 @@ AWS Core Services
 	  - database tier: only accepts traffic from the app tier 
 	  - there has also been a rule created to allow administration remotely from the Corporate Admin Network over ssh port 22
 	- Creating a security group: see AmazonSecurityGroupRulesCreate.png
-	  - 
+ - Compute Services: https://aws.amazon.com/products/compute
+	- Building webservice starts with Compute 
+	- AWS is a borad catalog of compute services:
+		- simple application services
+		- Virtual private servers 
+		- Serverless computing
+	- Scale your compute needs to your workload:
+		- As demand increases you can easily scale up
+		- When demand drops like nights and weekends, you can scale down to save money and resources.
+	- EC2 service 
+		- offers a wide variety of virtual server instance types appropriate for everything from simple webservers to large machine learning clusters
+		- you are not locked in to specifc hardware configurations that you purchased
+		- you can easily change instance types
+		- with on demand pricing you can cost effectively scale resources up and down to meet your needs
+	- AWS LAMBDA 
+		- lets you run code without provisioning or managing servers
+		- You dont have to run servers. Instead of running servers you just run your application when needed.
+		- You pay only for the compute time you consume
+		- You can run code for any application or backend service: mobile, IOT, streaming service, all with zero administration 
+		- Running compute without having to provision and maintain servers
+	- Amazon Lightsail
+		- Run a simple website ot ecommerce applications
+		- launch a virtual private server within minutes and mamange simple web and application servers 
+		- Includes: VM, SSD storage, data transfer, dns management, and a statis IP address for a low predicatable price
+	- Amazon ECS
+		- Is the Amazon EC2 container service 
+		- Is a highly scalable high performance container management service 
+		- Supports Doker containers 
+		- Allows you to easily run applications on a managed cluster of Amazon EC2 instances
+		- 
+ - Amazon Elastic Compute Cloud (EC2):
+	- aws.amazon.com/ec2
+	- Build and configure an EC2 instance:
+		- see demo png 
