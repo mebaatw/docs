@@ -161,3 +161,30 @@ AWS Core Services
 	- aws.amazon.com/ec2
 	- Build and configure an EC2 instance:
 		- see demo png 
+ - AWS LAMBDA
+	- A compute service which let you run code without provisioning or managing servers
+	- executes your code only when needed and scales automatically to thousands of requests per second 
+	- you only pay for the compute you use. You don't pay for compute time when your code is not running. 
+	- you can run code for any application or backend service or with zero administration
+	- supports nodejs C# java and python 
+	- used for event driven computing 
+	- respond to http requests using amazon API gateway 
+	- disk spaces is limited to 512mb
+	- 128 -1536mb memory
+	- aws function execution is limited to a maximum of 5 mins.
+	- request payload cannot exceded 6mb
+	- request body is limited to 128kb
+	- Use Cases:
+		- automated backups
+		- processing objects uploaded to s3
+		- event driven log analysis
+		- event driven transformations
+		- iot
+		- operating serverless websites 
+		- Example:
+			- Customer uploads an image on s3, triggering a lambda function to process that image immediately 
+			- most customers use micro services backend using aws lambda, sns, and api gateway to run both their website and their mobile applications
+ - AWS Elastic Beanstalk:
+	- For developers to quickly deploy an application into the cloud
+	- It's a platform as a service:
+		- the whole infrastructure and platform is created for you so you can quickly put your code over the system 

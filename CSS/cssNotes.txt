@@ -97,4 +97,21 @@ Selectors
 			- Simple Attribute Selectors
 				- select elements that have a certain attribute, regardless of that attribute’s value
 				- h1[class] {color: silver;} --> select all h1 elements that have a class attribute with any value and make their text silver
-			
+				- It is also possible to select based on the presence of more than one attribute. You do this by chaining the attribute selectors together. : a[href][title] {font-weight: bold;}
+			- Selection Based on Exact Attribute Value:
+				- You can further narrow the selection process to encompass only those elements whose attributes are a certain value.
+				- a[href="http://www.css-discuss.org/about.html"] {font-weight: bold;}
+				-  you can chain together multiple attribute-value selectors to select a single document
+				- a[href="http://www.w3.org/"][title="W3C Home"] {font-size: 200%;}
+				- there is a subtle but crucial difference between h1#page-title and h1[id="page-title"].
+			- Selection Based on Partial Attribute Values:
+				- see 2SelectorSubstringMatching.png
+				- A Particular Attribute Selection Type:
+					- *[lang|="en"] {color: white;}
+					- This rule will select any element whose lang attribute is equal to en or begins with en-
+				- MATCHING ONE WORD IN A SPACE-SEPARATED LIST:
+					- p[class~="warning"] {font-weight: bold;}
+				- Matching a substring within an attribute value:
+					- use the form [att*="val"] to match substrings
+					- span[class*="cloud"] {font-style: italic;}
+					- matches any span element whose class attribute contains the substring cloud
