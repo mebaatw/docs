@@ -188,3 +188,13 @@ AWS Core Services
 	- For developers to quickly deploy an application into the cloud
 	- It's a platform as a service:
 		- the whole infrastructure and platform is created for you so you can quickly put your code over the system 
+- Application Load Balancer
+			- second type of load balancer introduced as part of the elastic load balancing service
+			- Scenarios:
+				- use containers to host micro services and route to those applications from a single load balancer
+					- route different requests to the same instance but differ the path based on the port
+					- if you have different containers listening on various ports you can setup routing rules to distribute traffic to only the desired backend application.
+				- Target groups
+					- when configuring listeners for the LD you create rules in order to direct how the request recieved by the LD will be routed to the backend targets
+					- to register those Targets to the load balancer and configure the Health Check the LD will use for those targets, you create target groups 
+					- targets can also be members of multiple target groups

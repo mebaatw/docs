@@ -17,8 +17,7 @@ Elements
 		- block-level: 
 				- generates “breaks” before and after the element box 
 				-  p and div ; List items 
-		- inline-level: These elements do not generate a “break” before or after themselves, so they can appear within the content of another element without 
-		                disrupting its display.
+		- inline-level: These elements do not generate a “break” before or after themselves, so they can appear within the content of another element without disrupting its display.
 			- a element; strong and em
 		- in HTML block-level elements cannot descend from inline-level elements
 		- CSS, on the other hand, has no such restrictions. You can leave the markup as it is but change the display roles of the two elements like this:
@@ -115,3 +114,52 @@ Selectors
 					- use the form [att*="val"] to match substrings
 					- span[class*="cloud"] {font-style: italic;}
 					- matches any span element whose class attribute contains the substring cloud
+				- Matching a substring at the beginning of an attribute value	
+					- [att^="val"]
+					- a[href^="https:"] {font-weight: bold;}
+				- Matching a substring at the end of an attribute value	
+					- [att$="val"] 
+					- a[href$=".pdf"] {font-weight: bold;}
+			- The Case Insensitivity Identifier
+				- a[href$='.PDF' i]
+				- i means the selector will match any a element whose href attribute’s value ends in .pdf, regardless of the capitalization of the letters P, D, and F.
+	- Using Document Structure
+		- Understanding the Parent-Child Relationship
+			- see document tree struvture png
+		- Descendant Selectors:
+			- Defining descendant selectors is the act of creating rules that operate in certain structural circumstances but not others
+			- h1 em {color: gray;} -> This rule will make gray any text in an em element that is the descendant of an h1 element.
+			- the selector side of a rule is composed of two or more space-separated selectors
+			- blockquote b, p b {color: gray;} --> you want gray to be the text color of any b (boldface) element that is part of a blockquote and for any bold text that is found in a normal paragraph
+			-  the degree of separation between two elements can be practically infinite
+		- Selecting Children:
+			- select an element that is a direct child of another element
+			- h1 > strong {color: red;}
+			- table.summary td > p will select any p element that is a child of a td element that is itself descended from a table element that has a class attribute containing the word summary.
+		- Selecting Adjacent Sibling Elements:
+			- select an element that immediately follows another element with the same parent
+			- h1 + p {margin-top: 0;}
+		- Selecting Following Siblings	
+			- select any element that follows another element when both elements share the same parent
+			- As an example, to italicize any ol that follows an h2 and also shares a parent with the h2, you’d write h2 ~ol {font-style: italic;}
+	- Pseudo-Class Selectors	
+		- All pseudo-classes, without exception, are a word preceded by a single colon (:), and they can appear anywhere in a selector.
+		- pseudo-classes always refer to the element to which they’re attached, and no other. 
+		- Selecting the root element
+			- the pseudo-class :root selects the root element of the document.
+			- :root {border: 10px dotted gray;}
+		- Selecting empty elements:
+			- :empty
+			- select any element that has no children of any kind, including text nodes
+			- p:empty {display: none;} would prevent the display of any empty paragraphs.
+			- empty—no whitespace, visible content, or descendant elements
+			- comments are not considered content
+			- *:empty {display: none;}
+		- Selecting unique children:
+			- :only-child
+			- It selects elements when they are the only child element of another element
+			- img:only-child {border: 1px solid black;} --> add a border to any image that’s the only child of another element
+			- a[href] img:only-child {border: 2px solid black;} -> images that are sole children and found inside hyperlinks
+			- :only-of-type will match any element that is the only of its type among all its siblings
+		- Selecting first and last children:
+			- 
