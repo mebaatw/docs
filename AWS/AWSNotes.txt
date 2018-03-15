@@ -198,3 +198,11 @@ AWS Core Services
 					- when configuring listeners for the LD you create rules in order to direct how the request recieved by the LD will be routed to the backend targets
 					- to register those Targets to the load balancer and configure the Health Check the LD will use for those targets, you create target groups 
 					- targets can also be members of multiple target groups
+- Elastic Load Balancer
+	- Classis Load Balances: Amzons original Elastic Load Balancer type
+	- see png 
+- Auto Scaling 
+	- use cloud watch for monitoring and auto scaling to manage EC2 instances running based on performance
+	- add or remove EC2 instances based on conditions that you specify or a schedule
+	- Scaling out : adding more EC2 instances
+	- Scaling in : terminate EC2 instances
